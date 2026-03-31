@@ -350,20 +350,58 @@ body {
     position: relative;
     height: 400px;
     overflow: hidden;
+    background-color: #f9f4ee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.product-image img {
+.product-image img { /* Estilo geral para as imagens dos produtos */
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.6s ease;
 }
 
-.product-card:hover .product-image img {
+.product-card-morango .product-image { /* Estilo específico para o card do morango */
+    height: 400px;
+    width: 100%;
+}
+
+.product-card-morango .product-image img { /* Ajuste para a imagem do morango */
+    width: 120%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    left: -10px;
+}
+
+
+.product-card-morango .product-image img { /* Estilo para a imagem do morango */
+    object-fit: contain;
+}
+
+.product-card-pipoca .product-image img { /* Estilo específico para a imagem do pipoca */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    left: -10px;
+}
+
+.products-grid.product-card-vela-amarela .product-image img { /* Estilo específico para a imagem da vela amarela */
+    width: 110%;
+    height: auto;
+    object-fit: contain;
+    position: relative; 
+    right: -20px;
+}
+
+.product-card:hover .product-image img { /* Efeito de zoom suave para todas as imagens dos produtos */
     transform: scale(1.05);
 }
 
-.product-overlay {
+.product-overlay { /* Camada de sobreposição para o efeito de hover */
     position: absolute;
     inset: 0;
     display: flex;
@@ -373,12 +411,12 @@ body {
     transition: opacity 0.4s ease;
 }
 
-.product-card:hover .product-overlay {
-    opacity: 1;
+.product-card:hover .product-overlay { /* Exibe a sobreposição ao passar o mouse */
+    opacity: 1.0;
 }
 
-.product-button {
-    background: var(--color-gold-matte);
+.product-button { /* Estilo do botão "Ver Detalhes" */
+    background: var(--color-gold-matte); 
     color: white;
     padding: 12px 32px;
     border: none;
@@ -792,6 +830,25 @@ body {
     margin-top: 20px;
 }
 
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-sand);
+    text-decoration: none;
+    font-size: 14px;
+    transition: var(--transition-fast);
+}
+
+.social-links a:hover {
+    color: var(--color-gold);
+}
+
+.social-links img {
+    width: 16px;
+    height: 16px;
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 40px;
@@ -881,7 +938,7 @@ body {
         gap: 40px;
     }
     
-    .container,
+    .container
     .nav-container {
         padding: 0 24px;
     }
@@ -899,6 +956,4 @@ body {
     .hero-card {
         padding: 32px 24px;
     }
-
-   
 }
