@@ -82,27 +82,58 @@ productCards.forEach(card => {
 
 // Newsletter form handling
 const newsletterForm = document.getElementById('newsletterForm');
-newsletterForm.addEventListener('submit', (e) => {
+newsletterForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
     const formData = new FormData(newsletterForm);
     const name = formData.get('name');
     const email = formData.get('email');
     
-    // Show success message (visual feedback only)
     const button = newsletterForm.querySelector('button[type=\"submit\"]');
     const originalText = button.textContent;
-    button.textContent = '✓ Cadastrado com sucesso!';
-    button.style.background = '#6B8E23';
+    
+    const messageBox = document.getElementById('newsletterMessage');
+    messageBox.textContent = '';
+    messageBox.style.color = '';
+
+    try {
+        button.textContent = 'Enviando...';
+        button.disabled = true;
+        
+        const response = await fetch('/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, name })
+        });
+        
+        const result = await response.json();
+        
+        if (!response.ok) {
+            throw new Error(result.error || 'Erro ao enviar');
+        }
+        
+        button.textContent = '✓ Cadastrado com sucesso!';
+        button.style.background = '#6B8E23';
+        newsletterForm.reset();
+        messageBox.textContent = result.message || 'Cadastro concluído com sucesso!';
+        messageBox.style.color = '#27632a';
+        
+        console.log('Newsletter signup:', { name, email, result });
+        
+    } catch (error) {
+        button.textContent = 'Erro ao enviar';
+        button.style.background = '#D8727F';
+        messageBox.textContent = error.message || 'Erro desconhecido';
+        messageBox.style.color = '#8b1a1a';
+        console.error('Erro:', error);
+    }
     
     // Reset form and button after 3 seconds
     setTimeout(() => {
-        newsletterForm.reset();
         button.textContent = originalText;
         button.style.background = '';
+        button.disabled = false;
     }, 3000);
-    
-    console.log('Newsletter signup:', { name, email });
 });
 
 // Add parallax effect to hero section
