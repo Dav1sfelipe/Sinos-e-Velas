@@ -987,7 +987,20 @@ body {
     transform: scale(1.05);
     box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
 }
-
 .whatsapp-button i {
     font-size: 18px;
+}
+
+.explorar-mais {
+    position: relative;
+    left: 142%;
+    margin-top: 15px;
+}
+.explorar-mais .product-button{
+    background: var(--color-gold-matte); 
+    color: white;
+}
+.explorar-mais .product-button:hover {
+    background: var(--color-gold);
+    transform: scale(1.05);
 }
