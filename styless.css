@@ -397,6 +397,58 @@ body {
     right: -20px;
 }
 
+.product-card.product-card-vela-coco .product-image img { /* Estilo específico para a imagem da vela coco */
+    width: 120%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    left: -10px;
+}
+
+.product-card.product-card-vela-chiclete .product-image img { /* Estilo específico para a imagem da vela chiclete */
+    width: 101%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    left: -2px;
+    top: 2px;
+}
+
+.product-card.product-card-sabonete-maracuja .product-image img { /* Estilo específico para a imagem do sabonete de maracujá */
+    width: 110%;
+    height: 190%;
+    object-fit: contain;
+    position: relative;
+    left: 11px;
+    top: -110px;
+}
+
+.product-card.product-card-cheiro-cacho .product-image img {
+    width: 108%;
+    height: 190%;
+    object-fit: contain;
+    position: relative;
+    left: 11px;
+    top: 3px;
+}
+
+.products-grid.product-card-vela-amarela .product-image img {
+
+    top: 80px;
+}
+
+.section-description.titulo-sabonetes { /* Estilo específico para o título da seção de sabonetes */
+    margin-top: 70px;
+}
+
+.section-description.titulo-sabonetes {
+    margin-top: 70px;
+}
+
+.section-description.titulo-sabonetes-perso { /* Estilo específico para o título da seção de sabonetes personalizados */
+    margin-top: 70px;
+}
+
 .product-card:hover .product-image img { /* Efeito de zoom suave para todas as imagens dos produtos */
     transform: scale(1.05);
 }
