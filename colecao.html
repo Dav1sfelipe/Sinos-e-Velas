@@ -36,7 +36,17 @@
     <section class="collection">
         <div class="container">
             <h2 class="section-title">Coleção Sinos e Velas</h2>
+            <div class="interactive-section">
+                <div class="interactive-box">
+                    <button class="btn-interactive" id="btn-personalize">Personalizar Produto</button>
+                </div>
+                <div class="interactive-box">
+                    <a class="btn-interactive" id="btn-contact" href="https://wa.me/5511963437508?text=Olá%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." target="_blank" rel="noopener noreferrer">Fale Conosco</a>
+                </div>
+            </div>
             <p class="section-description">Explore nossa coleção de velas, sabonetes e perfumes artesanais.</p>
+
+            <!-- Sessão Interativa -->
 
             <div class="products-grid">
                 <div class="product-card product-card-vela-chiclete">
@@ -98,9 +108,9 @@
                     </div>
                 </div>
 
-                                <div class="product-card product-card-reserva2">
+                                <div class="product-card product-card-reserva2"> <!-- Esta classe é para o sabonete de chocolate -->
                     <div class="product-image">
-                        <img src="" alt="Foto da coleção 2">
+                        <img src="assets/sabonete-chocolate.jpeg" alt="Foto do sabonete de chocolate">
                         <div class="product-overlay glass-effect">
                             <button class="product-button">Ver Detalhes</button>
                         </div>
@@ -112,7 +122,7 @@
                 </div>
                 <div class="product-card product-card-reserva3">
                     <div class="product-image">
-                        <img src="" alt="Foto da coleção 2">
+                        <img src="assets/sabonete-rosa.jpeg" alt="Foto do sabonete rosa"> <!-- Esta classe é para o sabonete rosa -->
                         <div class="product-overlay glass-effect">
                             <button class="product-button">Ver Detalhes</button>
                         </div>
@@ -124,12 +134,14 @@
                 </div>
             </div> <!-- Fim da primeira parte dos produtos -->
 
+            <!-- Segunda parte dos produtos, parte dos perfumes -->
+
             <p class="section-description titulo-sabonetes">Coleção perfumes artesanais.</p>
 
             <div class="products-grid">
-                <div class="product-card product-card-reserva4">
+                <div class="product-card product-card-perfume-arabe"> <!-- Esta classe é para o perfume árabe -->
                     <div class="product-image">
-                        <img src="" alt="Foto da coleção 2">
+                        <img src="assets/perfume-arabe.jpeg" alt="Foto da coleção 2">
                         <div class="product-overlay glass-effect">
                             <button class="product-button">Ver Detalhes</button>
                         </div>
@@ -139,9 +151,9 @@
                         <p>Descrição breve do produto ou destaque da fragrância.</p>
                     </div>
                 </div>
-                <div class="product-card product-card-reserva5">
+                <div class="product-card product-card-perfume-laço"> <!-- Esta classe é para o perfume laço -->
                     <div class="product-image">
-                        <img src="" alt="Foto da coleção 2">
+                        <img src="assets/perfume-laço.jpeg" alt="Foto do perfume laço">
                         <div class="product-overlay glass-effect">
                             <button class="product-button">Ver Detalhes</button>
                         </div>
@@ -151,9 +163,9 @@
                         <p>Descrição breve do produto ou destaque da fragrância.</p>
                     </div>
                 </div>
-                <div class="product-card product-card-reserva6">
+                <div class="product-card product-card-perfume-basico"> <!-- Esta classe é para o perfume básico -->
                     <div class="product-image">
-                        <img src="" alt="Foto da coleção 2">
+                        <img src="assets/perfume-basico.jpeg" alt="Foto do perfume básico">
                         <div class="product-overlay glass-effect">
                             <button class="product-button">Ver Detalhes</button>
                         </div>
@@ -165,12 +177,14 @@
                 </div>
             </div>
 
+            <!-- Terceira parte dos produtos, parte dos sabonetes personalizados -->
+
             <p class="section-description titulo-sabonetes-perso">Coleção sabonetes personalizados.</p>
 
-            <div class="products-grid">
-                <div class="product-card product-card-reserva7">
+            <div class="products-grid products-grid-center">
+                <div class="product-card product-card-sabonete-lilo-e-stitch centered-card"> <!-- Esta classe é para o sabonete lilo e stitch -->
                     <div class="product-image">
-                        <img src="" alt="Foto da coleção 2">
+                        <img src="assets/sabonete-lilo.jpeg" alt="Foto do sabonete lilo e stitch">
                         <div class="product-overlay glass-effect">
                             <button class="product-button">Ver Detalhes</button>
                         </div>
@@ -180,21 +194,9 @@
                         <p>Descrição breve do produto ou destaque da fragrância.</p>
                     </div>
                 </div>
-                <div class="product-card product-card-reserva8">
+                <div class="product-card product-card-sabonete-lilo-quadrado centered-card"> <!-- Esta classe é para o sabonete lilo quadrado -->
                     <div class="product-image">
-                        <img src="" alt="Foto da coleção 2">
-                        <div class="product-overlay glass-effect">
-                            <button class="product-button">Ver Detalhes</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Título do Produto 2</h3>
-                        <p>Descrição breve do produto ou destaque da fragrância.</p>
-                    </div>
-                </div>
-                <div class="product-card product-card-reserva9">
-                    <div class="product-image">
-                        <img src="" alt="Foto da coleção 2">
+                        <img src="assets/sabonete-lilo-quadrado.jpeg" alt="Foto do sabonete lilo quadrado">
                         <div class="product-overlay glass-effect">
                             <button class="product-button">Ver Detalhes</button>
                         </div>
@@ -207,6 +209,71 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal para Personalizar -->
+    <div id="modal-personalize" class="modal">
+        <div class="modal-content glass-effect">
+            <span class="close" id="close-personalize">&times;</span>
+            <h2>Personalize Seu Produto</h2>
+            <p>Escolha fragrâncias, cores e detalhes para criar um produto único.</p>
+            <form id="personalizeForm">
+                <label for="fragrancia">Fragrância:</label>
+                <select id="fragrancia" name="fragrancia">
+                    <option>Maracujá</option>
+                    <option>Coco</option>
+                    <option>Rosa</option>
+                    <option>Lavanda</option>
+                    <option>Baunilha</option>
+                </select>
+
+                <label for="embalagem-cor">Cor / Embalagem:</label>
+                <select id="embalagem-cor" name="embalagem-cor">
+                    <option>Branco clássico</option>
+                    <option>Natural rústico</option>
+                    <option>Dourado luxo</option>
+                    <option>Rosa delicado</option>
+                    <option>Verde suave</option>
+                </select>
+                
+                
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" name="quantidade" min="1" value="1">
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="embalagem" name="embalagem">
+                    <label for="embalagem">Embalagem para presente</label>
+                    
+                </div>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+        
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
+                <label for="mensagem">Mensagem personalizada:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite um nome ou frase especial..."></textarea>
+
+                <div id="personalizeConfirmation" class="modal-confirmation" aria-live="polite"></div>
+                <button type="submit" class="btn-primary">Enviar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Contato -->
+    <div id="modal-contact" class="modal">
+        <div class="modal-content glass-effect">
+            <span class="close" id="close-contact">&times;</span>
+            <h2>Fale Conosco</h2>
+            <p>Entre em contato para dúvidas ou encomendas personalizadas.</p>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <button type="submit" class="btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
